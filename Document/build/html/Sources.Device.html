@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sources.Device package &mdash; netnerminal 0.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=48c42fc6"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="Sources.Component package" href="Sources.Component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            netnerminal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sources.Component.html">Sources.Component package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sources.Device package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Device.DevBase">Sources.Device.DevBase module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-DevBase">DevBase.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Device.DevBase.DevBase"><code class="docutils literal notranslate"><span class="pre">DevBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.close"><code class="docutils literal notranslate"><span class="pre">DevBase.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.ctl"><code class="docutils literal notranslate"><span class="pre">DevBase.ctl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.open"><code class="docutils literal notranslate"><span class="pre">DevBase.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.read"><code class="docutils literal notranslate"><span class="pre">DevBase.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.ready"><code class="docutils literal notranslate"><span class="pre">DevBase.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.register"><code class="docutils literal notranslate"><span class="pre">DevBase.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevBase.DevBase.write"><code class="docutils literal notranslate"><span class="pre">DevBase.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Device.DevLed">Sources.Device.DevLed module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-DevLed">DevLed.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Device.DevLed.DevLed"><code class="docutils literal notranslate"><span class="pre">DevLed</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.close"><code class="docutils literal notranslate"><span class="pre">DevLed.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.ctlBlinkParam"><code class="docutils literal notranslate"><span class="pre">DevLed.ctlBlinkParam()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.ctlChangeColor"><code class="docutils literal notranslate"><span class="pre">DevLed.ctlChangeColor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.ctlChangeSize"><code class="docutils literal notranslate"><span class="pre">DevLed.ctlChangeSize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.open"><code class="docutils literal notranslate"><span class="pre">DevLed.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.ready"><code class="docutils literal notranslate"><span class="pre">DevLed.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevLed.DevLed.register"><code class="docutils literal notranslate"><span class="pre">DevLed.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Device.DevMap">Sources.Device.DevMap module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-DevMap">DevMap.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Device.DevMap.DevMap"><code class="docutils literal notranslate"><span class="pre">DevMap</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.ctlAddClickLatLng"><code class="docutils literal notranslate"><span class="pre">DevMap.ctlAddClickLatLng()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.ctlAddClickPoint"><code class="docutils literal notranslate"><span class="pre">DevMap.ctlAddClickPoint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.ctlAddMark"><code class="docutils literal notranslate"><span class="pre">DevMap.ctlAddMark()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.ctlReload"><code class="docutils literal notranslate"><span class="pre">DevMap.ctlReload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.ready"><code class="docutils literal notranslate"><span class="pre">DevMap.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Device.DevMap.DevMap.register"><code class="docutils literal notranslate"><span class="pre">DevMap.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Device">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Sources.html">Sources package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">netnerminal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Sources</a></li>
+          <li class="breadcrumb-item"><a href="Sources.html">Sources package</a></li>
+      <li class="breadcrumb-item active">Sources.Device package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Sources.Device.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sources-device-package">
+<h1>Sources.Device package<a class="headerlink" href="#sources-device-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-Sources.Device.DevBase">
+<span id="sources-device-devbase-module"></span><h2>Sources.Device.DevBase module<a class="headerlink" href="#module-Sources.Device.DevBase" title="Link to this heading"></a></h2>
+<section id="module-DevBase">
+<span id="devbase-py"></span><h3>DevBase.py<a class="headerlink" href="#module-DevBase" title="Link to this heading"></a></h3>
+<section id="id1">
+<h4>简介<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>该模块实现了设备类基类的功能, 主要用于PyQt5应用程序中
+仅提供设备类实现的程序模板, 具体使用方法参考 DevLed.py 的实现</p>
+</section>
+<section id="id2">
+<h4>版本<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/10/18): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Device.DevBase.</span></span><span class="sig-name descname"><span class="pre">DevBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>设备类基类</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.close" title="Link to this definition"></a></dt>
+<dd><p>设备类关闭方法</p>
+<p>主要用于完成设备的关闭操作，如关闭串口、关闭网络连接等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.ctl">
+<span class="sig-name descname"><span class="pre">ctl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.ctl" title="Link to this definition"></a></dt>
+<dd><p>设备类控制方法</p>
+<p>主要用于完成设备的控制操作，如设置设备参数、控制设备输出等
+自定义的功能方法应该定义为 ctl_xxx(self,para1,para2,…)</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.open" title="Link to this definition"></a></dt>
+<dd><p>设备类打开方法</p>
+<p>主要用于完成设备的打开操作，如打开串口、打开网络连接等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.read" title="Link to this definition"></a></dt>
+<dd><p>设备类读取方法</p>
+<p>主要用于完成设备的读取操作，如读取串口数据、读取网络数据等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.ready" title="Link to this definition"></a></dt>
+<dd><p>设备类准备方法</p>
+<p>主要用于完成设备的初始化操作，通常用于完成设备注册与打开设备的中间过程</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.register" title="Link to this definition"></a></dt>
+<dd><p>设备类注册方法</p>
+<p>主要用于将设备所需的控件与Qt界面上的控件完成映射</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevBase.DevBase.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevBase.DevBase.write" title="Link to this definition"></a></dt>
+<dd><p>设备类写入方法</p>
+<p>主要用于完成设备的写入操作，如写入串口数据、写入网络数据等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Device.DevLed">
+<span id="sources-device-devled-module"></span><h2>Sources.Device.DevLed module<a class="headerlink" href="#module-Sources.Device.DevLed" title="Link to this heading"></a></h2>
+<section id="module-DevLed">
+<span id="devled-py"></span><h3>DevLed.py<a class="headerlink" href="#module-DevLed" title="Link to this heading"></a></h3>
+<section id="id3">
+<h4>简介<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>该模块实现了虚拟LED设备的功能, 主要用于 PyQt5 应用程序中
+它需要以下PyQt5的GUI控件对象:</p>
+<ul class="simple">
+<li><p>QLabel 虚拟LED显示控件</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>版本<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/10/18): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Device.DevLed.</span></span><span class="sig-name descname"><span class="pre">DevLed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed" title="Link to this definition"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#Sources.Device.DevBase.DevBase" title="Sources.Device.DevBase.DevBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.close" title="Link to this definition"></a></dt>
+<dd><p>设备类关闭方法</p>
+<p>主要用于完成设备的关闭操作，如关闭串口、关闭网络连接等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.ctlBlinkParam">
+<span class="sig-name descname"><span class="pre">ctlBlinkParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blinkNumber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.ctlBlinkParam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.ctlChangeColor">
+<span class="sig-name descname"><span class="pre">ctlChangeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GlobalColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.ctlChangeColor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.ctlChangeSize">
+<span class="sig-name descname"><span class="pre">ctlChangeSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.ctlChangeSize" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.open" title="Link to this definition"></a></dt>
+<dd><p>设备类打开方法</p>
+<p>主要用于完成设备的打开操作，如打开串口、打开网络连接等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.ready" title="Link to this definition"></a></dt>
+<dd><p>设备类准备方法</p>
+<p>主要用于完成设备的初始化操作，通常用于完成设备注册与打开设备的中间过程</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevLed.DevLed.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevLed.DevLed.register" title="Link to this definition"></a></dt>
+<dd><p>设备类注册方法</p>
+<p>主要用于将设备所需的控件与Qt界面上的控件完成映射</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Device.DevMap">
+<span id="sources-device-devmap-module"></span><h2>Sources.Device.DevMap module<a class="headerlink" href="#module-Sources.Device.DevMap" title="Link to this heading"></a></h2>
+<section id="module-DevMap">
+<span id="devmap-py"></span><h3>DevMap.py<a class="headerlink" href="#module-DevMap" title="Link to this heading"></a></h3>
+<section id="id5">
+<h4>简介<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>该模块实现了地图控制设备的功能, 主要用于PyQt5应用程序中
+它需要以下PyQt5的GUI控件对象:</p>
+<ul class="simple">
+<li><p>QtWebEngineWidgets 地图的呈现和基本控制功能</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>版本<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/11/15): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Device.DevMap.</span></span><span class="sig-name descname"><span class="pre">DevMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap" title="Link to this definition"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#Sources.Device.DevBase.DevBase" title="Sources.Device.DevBase.DevBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DevBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.ctlAddClickLatLng">
+<span class="sig-name descname"><span class="pre">ctlAddClickLatLng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.ctlAddClickLatLng" title="Link to this definition"></a></dt>
+<dd><p>添加在地图上点击鼠标显示经纬度的功能</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.ctlAddClickPoint">
+<span class="sig-name descname"><span class="pre">ctlAddClickPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.ctlAddClickPoint" title="Link to this definition"></a></dt>
+<dd><p>添加在地图上点击鼠标放置点的功能</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.ctlAddMark">
+<span class="sig-name descname"><span class="pre">ctlAddMark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">popup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Mark'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cloud'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'blue'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.ctlAddMark" title="Link to this definition"></a></dt>
+<dd><p>在地图上添加标记点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Lat</strong> (<em>float</em>) – 经度</p></li>
+<li><p><strong>Lng</strong> (<em>float</em>) – 纬度</p></li>
+<li><p><strong>popup</strong> (<em>str</em><em>, </em><em>optional</em>) – 标记的命名. Defaults to “Mark”.</p></li>
+<li><p><strong>icon</strong> (<em>str</em><em>, </em><em>optional</em>) – 标记的图标. Defaults to “cloud”.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – 标记的颜色. Defaults to “blue”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.ctlReload">
+<span class="sig-name descname"><span class="pre">ctlReload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.ctlReload" title="Link to this definition"></a></dt>
+<dd><p>重新加载地图</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.ready" title="Link to this definition"></a></dt>
+<dd><p>地图控制设备准备</p>
+<p>加载地图的html文件并显示在QWebEngineView中</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Device.DevMap.DevMap.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Device.DevMap.DevMap.register" title="Link to this definition"></a></dt>
+<dd><p>注册地图控制设备</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Device">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Sources.Device" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="Sources.Component.html" class="btn btn-neutral float-left" title="Sources.Component package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, 1109。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

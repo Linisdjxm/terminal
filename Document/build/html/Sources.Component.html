@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sources.Component package &mdash; netnerminal 0.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=48c42fc6"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Sources.Device package" href="Sources.Device.html" />
+    <link rel="prev" title="Sources package" href="Sources.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            netnerminal
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Sources</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sources.Component package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Component.ComBaseFun">Sources.Component.ComBaseFun module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ComBaseFun">ComBaseFun.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun"><code class="docutils literal notranslate"><span class="pre">ComBaseFun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.close"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.ctl"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.ctl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.open"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.read"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.ready"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.register"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun.write"><code class="docutils literal notranslate"><span class="pre">ComBaseFun.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Component.ComLedFun">Sources.Component.ComLedFun module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ComLedFun">ComLedFun.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Component.ComLedFun.ComLedFun"><code class="docutils literal notranslate"><span class="pre">ComLedFun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComLedFun.ComLedFun.on_ledConfirmPushButton_clicked"><code class="docutils literal notranslate"><span class="pre">ComLedFun.on_ledConfirmPushButton_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComLedFun.ComLedFun.ready"><code class="docutils literal notranslate"><span class="pre">ComLedFun.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComLedFun.ComLedFun.register"><code class="docutils literal notranslate"><span class="pre">ComLedFun.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Component.ComMapPresentationFun">Sources.Component.ComMapPresentationFun module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-ComMapPresentationFun">ComMapPresentationFun.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">版本</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun"><code class="docutils literal notranslate"><span class="pre">ComMapPresentationFun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun.ready"><code class="docutils literal notranslate"><span class="pre">ComMapPresentationFun.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun.register"><code class="docutils literal notranslate"><span class="pre">ComMapPresentationFun.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-Sources.Component">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Sources.Device.html">Sources.Device package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sources.html">Sources package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">netnerminal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Sources</a></li>
+          <li class="breadcrumb-item"><a href="Sources.html">Sources package</a></li>
+      <li class="breadcrumb-item active">Sources.Component package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Sources.Component.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sources-component-package">
+<h1>Sources.Component package<a class="headerlink" href="#sources-component-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-Sources.Component.ComBaseFun">
+<span id="sources-component-combasefun-module"></span><h2>Sources.Component.ComBaseFun module<a class="headerlink" href="#module-Sources.Component.ComBaseFun" title="Link to this heading"></a></h2>
+<section id="module-ComBaseFun">
+<span id="combasefun-py"></span><h3>ComBaseFun.py<a class="headerlink" href="#module-ComBaseFun" title="Link to this heading"></a></h3>
+<section id="id1">
+<h4>简介<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>该模块实现了功能组件类基类, 主要用于PyQt5应用程序中
+仅提供功能组件类实现的程序模板, 具体使用方法参考 ComLedFun.py 的实现</p>
+</section>
+<section id="id2">
+<h4>版本<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/10/18): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Component.ComBaseFun.</span></span><span class="sig-name descname"><span class="pre">ComBaseFun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>功能组件类基类</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.close" title="Link to this definition"></a></dt>
+<dd><p>功能组件关闭方法</p>
+<p>主要用于完成功能的关闭操作，如关闭线程、销毁定时器等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.ctl">
+<span class="sig-name descname"><span class="pre">ctl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.ctl" title="Link to this definition"></a></dt>
+<dd><p>功能组件控制方法</p>
+<p>主要用于功能组件的控制操作，如控制组件上的各项设备、参数等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.open" title="Link to this definition"></a></dt>
+<dd><p>功能组件启动方法</p>
+<p>主要用于完成功能的启动操作，如启动线程、创建定时器等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.read" title="Link to this definition"></a></dt>
+<dd><p>功能组件读取数据方法</p>
+<p>主要用于功能组件的读取操作，如读取文件数据等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.ready" title="Link to this definition"></a></dt>
+<dd><p>功能组件准备方法</p>
+<p>主要用于完成功能组件的初始化操作，通常用于完成功能组件注册与启动功能的中间过程</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.register" title="Link to this definition"></a></dt>
+<dd><p>功能组件注册方法</p>
+<p>主要用于将功能组件所需的控件与Qt界面上的控件完成映射</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComBaseFun.ComBaseFun.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComBaseFun.ComBaseFun.write" title="Link to this definition"></a></dt>
+<dd><p>功能组件写入数据方法</p>
+<p>主要用于功能组件的写入操作，如写入文件数据等</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（可选）</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Component.ComLedFun">
+<span id="sources-component-comledfun-module"></span><h2>Sources.Component.ComLedFun module<a class="headerlink" href="#module-Sources.Component.ComLedFun" title="Link to this heading"></a></h2>
+<section id="module-ComLedFun">
+<span id="comledfun-py"></span><h3>ComLedFun.py<a class="headerlink" href="#module-ComLedFun" title="Link to this heading"></a></h3>
+<section id="id3">
+<h4>简介<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>该模块实现了虚拟LED控制的功能, 主要用于PyQt5的应用程序中
+它需要以下PyQt5的GUI控件对象:</p>
+<ul class="simple">
+<li><p>QPushButton 确认键</p></li>
+<li><p>QComboBox LED模式切换选择</p></li>
+<li><p>QLabel 虚拟LED设备(-&gt;DevLed)</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>版本<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/10/18): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Component.ComLedFun.ComLedFun">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Component.ComLedFun.</span></span><span class="sig-name descname"><span class="pre">ComLedFun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComLedFun.ComLedFun" title="Link to this definition"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun" title="Sources.Component.ComBaseFun.ComBaseFun"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComBaseFun</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComLedFun.ComLedFun.on_ledConfirmPushButton_clicked">
+<span class="sig-name descname"><span class="pre">on_ledConfirmPushButton_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComLedFun.ComLedFun.on_ledConfirmPushButton_clicked" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComLedFun.ComLedFun.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComLedFun.ComLedFun.ready" title="Link to this definition"></a></dt>
+<dd><p>功能组件准备方法</p>
+<p>主要用于完成功能组件的初始化操作，通常用于完成功能组件注册与启动功能的中间过程</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComLedFun.ComLedFun.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComLedFun.ComLedFun.register" title="Link to this definition"></a></dt>
+<dd><p>功能组件注册方法</p>
+<p>主要用于将功能组件所需的控件与Qt界面上的控件完成映射</p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – 应该被子类实现（必须）</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Component.ComMapPresentationFun">
+<span id="sources-component-commappresentationfun-module"></span><h2>Sources.Component.ComMapPresentationFun module<a class="headerlink" href="#module-Sources.Component.ComMapPresentationFun" title="Link to this heading"></a></h2>
+<section id="module-ComMapPresentationFun">
+<span id="commappresentationfun-py"></span><h3>ComMapPresentationFun.py<a class="headerlink" href="#module-ComMapPresentationFun" title="Link to this heading"></a></h3>
+<section id="id5">
+<h4>简介<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>该模块实现了地图控制的功能, 主要用于PyQt5应用程序中
+它需要以下PyQt5的GUI控件对象:</p>
+<ul class="simple">
+<li><p>QWebEngineView 地图显示设备(-&gt;DevMap)。</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>版本<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>版本 1.0 (2024/11/15): 初始版本</p></li>
+</ul>
+</section>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sources.Component.ComMapPresentationFun.ComMapPresentationFun">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Sources.Component.ComMapPresentationFun.</span></span><span class="sig-name descname"><span class="pre">ComMapPresentationFun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun" title="Link to this definition"></a></dt>
+<dd><p>基类：<a class="reference internal" href="#Sources.Component.ComBaseFun.ComBaseFun" title="Sources.Component.ComBaseFun.ComBaseFun"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComBaseFun</span></code></a></p>
+<p>地图控制功能组件, 用于显示地图、控制地图的显示、操作等</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ComBaseFun</strong> (<em>object</em>) – 继承自功能组件基类</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComMapPresentationFun.ComMapPresentationFun.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun.ready" title="Link to this definition"></a></dt>
+<dd><p>初始化地图控制设备</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sources.Component.ComMapPresentationFun.ComMapPresentationFun.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sources.Component.ComMapPresentationFun.ComMapPresentationFun.register" title="Link to this definition"></a></dt>
+<dd><p>注册地图控制设备</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – 来自于Qt GUI的所需控件字典</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Sources.Component">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Sources.Component" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="Sources.html" class="btn btn-neutral float-left" title="Sources package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="Sources.Device.html" class="btn btn-neutral float-right" title="Sources.Device package" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, 1109。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <title>Hello, World</title>  
+        <style type="text/css">  
+		    body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        </style>  
+		<script type="text/javascript" src="map_load.js"></script>
+		<script type="text/javascript" src="tools/DrawingManager_min.js"></script>
+		<link rel="stylesheet" type="text/css" href="tools/DrawingManager_min.css"/>
+    </head>  
+    <body>
+        <div id="allmap"></div>
+    </body>
+</html>
+
+<script src="qwebchannel.js"></script>
+<script type="text/javascript"> 
+    // 百度地图API功能
+    var map = new BMap.Map("allmap", {enableMapClick:false});// 创建Map实例，关闭底图可点功能
+    map.centerAndZoom(new BMap.Point(119.670533, 25.943939), 20);  // 初始化地图,设置中心点坐标和地图级别
+    //****添加缩放按钮
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+    map.setMapType(BMAP_SATELLITE_MAP);
+    map.addControl(top_left_control);        
+    map.addControl(top_left_navigation);       
+    map.setCurrentCity("");              // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    map.disableDoubleClickZoom();
+
+    // add_point("1","UAV.png","119.670533","25.943939");
+
+    /**
+     * @method	add point on the map
+     * @param	planeType {String}
+     * @param	x {String}
+     * @param	y {String}
+     * @param	planeSet {String}
+     */
+    function add_point(id,planeType,x,y){
+        var icoPwd = "baidumap_img/"+planeType;
+        var myIcon = new BMap.Icon(icoPwd, new BMap.Size(-1,-1),{anchor: new BMap.Size(25, 25)});
+		var pt = new BMap.Point(x, y);
+        var marker = new BMap.Marker(pt,{icon:myIcon,enableClicking:true});
+        var infoDisplay =           "<p>&emsp;ID:"+id+"&emsp;</p>";
+        var label = new BMap.Label(infoDisplay,{offset:new BMap.Size(25,-25)});
+        label.setStyle({
+            color: 'black',
+            fontSize: '12px',
+            backgroundColor: '#F5F5F5',
+            border: 'none',
+            maxHeight: 'none',
+            lineHeight: '15px',
+            maxWidth: 'none',
+            textAlign: 'left',
+            opacity:0.5
+        })
+        marker.setLabel(label);
+        marker.setTitle("point");
+        map.addOverlay(marker); 
+
+        var marker_redarrow = new BMap.Marker(pt,{enableClicking:true});
+        //marker_redarrow.setTitle("point");
+        map.addOverlay(marker_redarrow); 
+        // marker_redarrow.addEventListener("click", function(){
+        //     palateMap.getMark(id,x,y);
+        // }); 
+	}
+
+    map.addEventListener("click",function (e){
+        alert("经度: " + e.point.lng + ", 纬度: " + e.point.lat);; //119.627881, 25.891652
+    });
+
+	/**
+	 * @method	remove all object on the map
+	 * @param	None
+	 */
+	function remove_all(){
+		map.clearOverlays();
+	}
+
+    /**
+     * @method	add angle on the map
+     * @param	x {String} longitude
+     * @param	y {String} latitude
+     */
+    function add_vector(x,y){
+		var vectorFCArrow = new BMap.Marker(new BMap.Point(x,y), {		
+		icon: new BMap.Symbol(BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW, {// 初始化方向向上的闭合箭头
+			scale: 3,
+			strokeWeight: 1,
+			rotation: 0,//顺时针旋转30度
+			fillColor: 'yellow',
+			fillOpacity: 0.8
+		})
+        });
+        vectorFCArrow.setTitle("vector");
+		map.addOverlay(vectorFCArrow);
+		vectorFCArrow.show()	;
+		//vectorFCArrow.hide()
+	}
+
+	/**
+	 * @method	add line on the map
+	 * @param	x1 {String} line start longitude
+	 * @param	y1 {String} line start latitude
+	 * @param	x2 {String} line end longitude
+	 * @param	y2 {String} line end latitude
+	 */
+	function add_line(id,x1,y1,x2,y2,color){
+        var polyline = new BMap.Polyline(
+            [new BMap.Point(x1, y1),
+            new BMap.Point(x2, y2)],
+            {
+                strokeColor:color, 
+                strokeWeight:6, 
+                strokeOpacity:0.5,
+                strokeStyle:"dashed"
+            });
+        map.addOverlay(polyline);
+        polyline.addEventListener("click", function(){
+            //alert("您点击了链路"+id);    
+        }); 
+	}
+
+    function remove_lineRed(){
+        var allOverlays = map.getOverlays();
+        for (var i=0;i<allOverlays.length;i++)
+        { 
+            if(allOverlays[i].toString()=="[object Polyline]")
+            {
+                if(allOverlays[i].getStrokeColor()=="red")
+                {
+                    map.removeOverlay(allOverlays[i]);
+                }
+            }
+        }
+    }
+
+    function remove_lineBlack(){
+        var allOverlays = map.getOverlays();
+        for (var i=0;i<allOverlays.length;i++)
+        { 
+            if(allOverlays[i].toString()=="[object Polyline]")
+            {
+                if(allOverlays[i].getStrokeColor()=="black")
+                {
+                    map.removeOverlay(allOverlays[i]);
+                }
+            }
+        }
+    }
+
+    function remove_vector(){
+        var allOverlays = map.getOverlays();
+        for (var i=0;i<allOverlays.length;i++)
+        { 
+            if(allOverlays[i].toString()=="[object Marker]")
+            {
+                if(allOverlays[i].getTitle()=="vector")
+                {
+                    map.removeOverlay(allOverlays[i]);
+                }
+            }
+        }
+    }
+
+    function remove_point(){
+        var allOverlays = map.getOverlays();
+        for (var i=0;i<allOverlays.length;i++)
+        { 
+            if(allOverlays[i].toString()=="[object Marker]")
+            {
+                if(allOverlays[i].getTitle()=="point")
+                {
+                    map.removeOverlay(allOverlays[i]);
+                }
+            }
+        }
+    }
+
+    /**
+     * @method	jump a message show alert infomation
+     * @param	None
+     */
+	function showAlert() {
+        alert('this is web alert');
+        }     
+
+</script>
+

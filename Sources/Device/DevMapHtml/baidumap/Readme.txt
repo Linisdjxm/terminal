@@ -1,0 +1,5 @@
+api3.0版本百度地图
+此位置下tiles存放普通百度地图瓦片
+此位置下tiles_hybrid存放卫星瓦片
+此位置下tiles_hybrid存放卫星瓦片
+此位置下tiles_self存放自定义图层（参照map_load.js文件）
