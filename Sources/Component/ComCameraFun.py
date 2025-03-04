@@ -15,7 +15,7 @@ from Sources.Component.ComBaseFun import ComBaseFun
 from Sources.Device.DevCamera import DevCamera
 
 class ComCameraFun(ComBaseFun):
-    def __init__(self, name:str, **kwargs):
+    def __init__(self, name:str, topology, focus, **kwargs):
         """Camera control function demo component
 
         Args:
@@ -24,36 +24,29 @@ class ComCameraFun(ComBaseFun):
                 {
                     'CameraObjCheckBox': QCheckBox, Fun:CameraCtl
                     'CameraObjLabel': QLabel, Fun:ShowVedio
-                    'CameraObjLabel_2': QLabel, Fun:ShowScreenshot
                     'CameraObjPushButton': QPushButton,Fun:Screenshot
                     'CameraObjPushButton_2': QPushButton,Fun:SaveScreenshot
+                    'QualityObjComboBox': QComboBox,Fun:
                 }
         """
         super(ComCameraFun,self).__init__(name)
 
-        self.register(**kwargs)
+        self.register(topology, focus, **kwargs)
         self.ready()
 
         #self.server = QTcpServer(self)
         #if not self.server.listen(QHostAddress.LocalHost, 6666):
            # self.browser.append(self.server.errorString())
 
-    def register(self, **kwargs):
-        self.CameraObjPushButton_2:QPushButton = kwargs.get('CameraObjPushButton_2')
-        self.devCamera = DevCamera('Camera设备',**{'CameraObjCheckBox':kwargs.get('CameraObjCheckBox'),
+    def register(self, topology, focus, **kwargs):
+        #self.CameraObjPushButton_2:QPushButton = kwargs.get('CameraObjPushButton_2')
+        self.devCamera = DevCamera('Camera设备', topology, focus, **{'CameraObjCheckBox':kwargs.get('CameraObjCheckBox'),
                                                  'CameraObjLabel':kwargs.get('CameraObjLabel'),
-                                                 'CameraObjLabel_2':kwargs.get('CameraObjLabel_2'),
-                                                 'CameraObjPushButton':kwargs.get('CameraObjPushButton'),
-                                                 'CameraObjTextEdit':kwargs.get('CameraObjTextEdit'),
-                                                 'CameraObjTextEdit_2':kwargs.get('CameraObjTextEdit_2'),
-                                                 'CameraObjTextEdit_3':kwargs.get('CameraObjTextEdit_3'),
-                                                 'CameraObjTextEdit_4':kwargs.get('CameraObjTextEdit_4'),
-                                                 'CameraObjComboBox':kwargs.get('CameraObjComboBox'),
-                                                 'QualityObjComboBox':kwargs.get('QualityObjComboBox'),
+                                                 'QualityObjComboBox':kwargs.get('QualityObjComboBox')
                                                  })
         
     def ready(self):
-        self.CameraObjPushButton_2.clicked.connect(self.SaveScreenShot)
+        #self.CameraObjPushButton_2.clicked.connect(self.SaveScreenShot)
         self.devCamera.ready()
 
     @pyqtSlot()

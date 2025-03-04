@@ -18,12 +18,15 @@ from Sources.MainWindowPro import MainWindowPro
 from Sources.MainWindowMin import MainWindowMin
 from Sources.MainWindowMMin import MainWindowMMin
 
+import builtins
+builtins._DEBUG = 0
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     MainWindowMMin1 = MainWindowMMin()
     
     # 设置CSS样式
-    styleFile = 'Forms/qss/ManjaroMix.qss'
+    styleFile = 'Forms/qss/Ubuntu.qss'
     with open(styleFile, 'r') as f:
         qssStyle = f.read()
     MainWindowMMin1.setStyleSheet(qssStyle)

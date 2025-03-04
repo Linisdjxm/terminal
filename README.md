@@ -36,8 +36,12 @@ NETTERMINAL
 │   └── MainWindowPro.py            // 地面站终端入口(控制逻辑)
 │
 ├── Main.py                     // 启动程序
+├── Main3.py                     // 测试程序2
 └── README.md                   // 帮助文档
 ```
+
+## 测试
+1. 在适当的Conda环境下分别运行Main.py, Main3.py
 
 ## 项目架构
 ![项目架构图](./Document/fig_architecture.png "项目架构图")
