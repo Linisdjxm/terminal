@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 '''
 @File    :   MainWindowPro.py
-@Time    :   2024/10/18 16:08:20
-@Author  :   WangXi 
+@Time    :   2025/03
+@Author  :   L 
 @Version :   1.0
 @Desc    :   Built in PyQt5
-             网络演示系统的地面站终端主界面逻辑控制
-             主界面设计文件为 MainWindowPro.ui->Ui_MainWindowPro.py
+             网络演示系统的地终端主界面逻辑控制
+             主界面设计文件为 MainWindowMMin.ui->Ui_MainWindowMMin.py
 '''
 
 from PyQt5.QtCore import Qt, QThread
